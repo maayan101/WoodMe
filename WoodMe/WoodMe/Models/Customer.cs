@@ -16,5 +16,9 @@ namespace WoodMe.Models
         public string Street { get; set; }
 
         public int HomeNumber { get; set; }
+
+        public int PhoneNumber { get; set; }
+
+        public string  Email { get; set; }
     }
 }

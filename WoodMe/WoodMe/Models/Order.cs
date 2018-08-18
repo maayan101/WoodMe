@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WoodMe.AdditionalClasses;
+
 
 namespace WoodMe.Models
 {
@@ -18,7 +18,13 @@ namespace WoodMe.Models
 
         public string ImageLink { get; set; }
 
-        public CreditCard CreditCard { get; set; }
+        public string CardNumber { get; set; }
+
+        public int ExperationMonth { get; set; }
+
+        public int ExperationYear { get; set; }
+
+        public String CVV { get; set; }
 
         public Discount Discount { get; set; }
     }
