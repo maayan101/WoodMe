@@ -1,0 +1,12 @@
+{
+  "connections": [
+    {
+      "name": "sheli",
+      "server": "https://github.com/maayan101/WoodMe.git",
+      "database": "DatabaseContext-53546fbc-6788-4349-bef1-bef942234ac9",
+      "port": "44385",
+      "user": "LAPTOP-43BFDU42\\שלי סיבוני",
+      "password": "123456"
+    }
+  ]
+}
