@@ -3,8 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/products.css" type="text/css" />
     <title>@ViewData["Title"] - WoodMe</title>
 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#test").hide();
+            });
+        });
+    </script>
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/lib/bootstrap-rtl/dist/css/bootstrap-rtl.css" />
@@ -32,7 +41,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">בית</a></li>
-                    <li><a asp-area="" asp-controller="Products" asp-action="Index">מוצרים</a></li>
+                    <li><a asp-area="" asp-controller="Products" asp-action="IndexUser">מוצרים</a></li>
                     <li><a asp-area="" asp-controller="Orders" asp-action="Index">הזמנות</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">מה זה WoodMe?</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">צרו קשר</a></li>

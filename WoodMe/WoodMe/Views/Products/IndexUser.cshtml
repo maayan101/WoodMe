@@ -1,0 +1,100 @@
+﻿@model IEnumerable<WoodMe.Models.Product>
+
+@{
+    ViewData["Title"] = "IndexUser";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/products.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+    <h2>כל ה-WoodMe שלנו</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    שם המוצר
+                </th>
+                <th>
+                    אורך
+                </th>
+                <th>
+                    רוחב
+                </th>
+                <th>
+                    טקסטורה
+                </th>
+                <th>
+                    מחיר
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Texture)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">התחבר כמנהל</button>
+
+
+    <div id="id01" class="w3-modal">
+
+        <form class="w3-modal-content animate" action="IndexManager">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="~/images/ManagerImg.svg" alt="Avatar" class="avatar">
+            </div>
+            <div class="w3-container">
+                <label class="login-label" for="uname"><b>שם משתמש</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <br />
+                <label class="login-label" for="psw"><b>סיסמא</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            <div class="center">
+                <button type="submit">
+                    התחברות
+                </button>
+            </div>
+            @*<div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">ביטול</button>
+            </div>*@
+        </form>
+    </div>
+</body>

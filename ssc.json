@@ -1,10 +1,10 @@
 {
   "connections": [
     {
-      "name": "sheli",
-      "server": "https://github.com/maayan101/WoodMe.git",
+      "name": "dev",
+      "server": "localhost\\\\mssqllocaldb",
       "database": "DatabaseContext-53546fbc-6788-4349-bef1-bef942234ac9",
-      "port": "44385",
+      "port": 1433,
       "user": "LAPTOP-43BFDU42\\שלי סיבוני",
       "password": "123456"
     }

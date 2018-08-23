@@ -19,7 +19,12 @@ namespace WoodMe.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexUser()
+        {
+            return View(await _context.Product.ToListAsync());
+        }
+
+        public async Task<IActionResult> IndexManager()
         {
             return View(await _context.Product.ToListAsync());
         }
@@ -59,7 +64,7 @@ namespace WoodMe.Controllers
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexUser));
             }
             return View(product);
         }
@@ -110,7 +115,7 @@ namespace WoodMe.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexUser));
             }
             return View(product);
         }
@@ -141,7 +146,7 @@ namespace WoodMe.Controllers
             var product = await _context.Product.FindAsync(id);
             _context.Product.Remove(product);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexUser));
         }
 
         private bool ProductExists(int id)
