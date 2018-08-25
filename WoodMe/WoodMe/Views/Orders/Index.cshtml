@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WoodMe.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "ההזמנות שלי";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">הזמנה חדשה</a>
 </p>
 <table class="table">
     <thead>
@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.CVV)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.OrderId">ערוך</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderId">פרטים</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderId">פרטים</a>
             </td>
         </tr>
 }
