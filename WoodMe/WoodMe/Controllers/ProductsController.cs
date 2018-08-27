@@ -33,7 +33,6 @@ namespace WoodMe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> IndexManager([Bind("UserId,UserName,Password")] User user)
         {
-
             if (user == null)
             {
                 return NotFound();
