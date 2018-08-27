@@ -4,7 +4,7 @@
     ViewData["Title"] = "ההזמנות שלי";
 }
 
-<h2>Index</h2>
+<h2>הזמנות</h2>
 
 <p>
     <a asp-action="Create">הזמנה חדשה</a>
@@ -57,7 +57,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderId">ערוך</a> |
                 <a asp-action="Details" asp-route-id="@item.OrderId">פרטים</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderId">פרטים</a>
+                <a asp-action="Delete" asp-route-id="@item.OrderId">מחק</a>
             </td>
         </tr>
 }
