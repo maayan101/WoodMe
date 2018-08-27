@@ -43,8 +43,12 @@ namespace WoodMe.Controllers
         }
 
         // GET: Orders/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var q = from s in _context.Product
+                    select new { Value = s.Id, Text = s.Name };
+
+            ViewData["Products"] = new SelectList(await q.ToListAsync(), "Value", "Text");
             return View();
         }
 
