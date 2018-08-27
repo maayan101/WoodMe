@@ -24,8 +24,27 @@ namespace WoodMe.Controllers
             return View(await _context.Product.ToListAsync());
         }
 
-        public async Task<IActionResult> IndexManager()
+        public IActionResult Login()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> IndexManager([Bind("UserId,UserName,Password")] User user)
+        {
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var manager = await _context.User.FirstOrDefaultAsync(u => u.UserName == user.UserName && u.Password == user.Password);
+            if (manager == null)
+            {
+                return NotFound();
+            }
+
             return View(await _context.Product.ToListAsync());
         }
 

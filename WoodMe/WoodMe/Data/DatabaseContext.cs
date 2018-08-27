@@ -21,5 +21,7 @@ namespace WoodMe.Models
         public DbSet<WoodMe.Models.Discount> Discount { get; set; }
 
         public DbSet<WoodMe.Models.Order> Order { get; set; }
+
+        public DbSet<WoodMe.Models.User> User { get; set; }
     }
 }
